@@ -9,12 +9,35 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <table class="table table-responsive">
+                        <tr>
+                            <th>username</th>
+                            <th>:</th>
+                            <td>{{$user->username}}</td>
+                        </tr>
+                        <tr>
+                            <th>name</th>
+                            <th>:</th>
+                            <td>{{$user->name}}</td>
+                        </tr>
+                        <tr>
+                            <th>email</th>
+                            <th>:</th>
+                            <td>{{$user->email}}</td>
+                        </tr>
+                        <tr>
+                            <th>created at</th>
+                            <th>:</th>
+                            <td>{{$user->created_at}}</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
